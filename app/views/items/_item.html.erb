@@ -19,6 +19,7 @@
       <%= item.score %> points
       by <%= render_link_to_user(item.user) %> <%= link_to "#{time_ago_in_words(item.created_at)} ago", item %>
       | <%= link_to "#{item.comments_count} comments", item %>
+      | <%= link_to "Delete", delete_post_path %>
     </small>
   </div>
 </li>

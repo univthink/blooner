@@ -6,7 +6,7 @@ Rails.application.routes.draw do
     member do
       post :toggle
       post :vote, to: 'user_item_votes#create'
-      delete :vote, to: 'user_item_votes#destroy'
+      delete :vote, to: 'user_item_votes#destroy' as: :delete_post
     end
   end
 
