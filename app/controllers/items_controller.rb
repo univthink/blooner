@@ -16,6 +16,10 @@ class ItemsController < ApplicationController
     @comments = @item.comments.includes(:user).order(created_at: :asc)
   end
 
+  def delete
+    @item.destroy
+  end
+
   def new
     @item = Item.new
   end

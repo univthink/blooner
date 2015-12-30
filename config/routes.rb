@@ -6,7 +6,7 @@ Rails.application.routes.draw do
     member do
       post :toggle
       post :vote, to: 'user_item_votes#create'
-      delete :vote, to: 'user_item_votes#destroy', as: :delete_post
+      delete :vote, to: 'user_item_votes#destroy'
     end
   end
 
@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   resources :user_sessions, only: [:new, :create, :destroy]
 
   get 'login' => 'user_sessions#new', as: :login
+  get 'delete' => 'items#delete', as: :delete
   match 'logout' => 'user_sessions#destroy', as: :logout, via: [:get, :post]
 
   namespace :admin do
